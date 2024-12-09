@@ -41,6 +41,8 @@ namespace Pathfinder2EActionEvaluator
     }
 
     //I wish the version of C# I'm using had interfaces.
+    //The fact that I can't have an abstract static method
+    //makes this more complicated than it needs to be.
     class Creature
     {
         public Result attackAC(int toHit)
@@ -70,6 +72,11 @@ namespace Pathfinder2EActionEvaluator
         public Result fortitudeSave(int deeCee)
         {
             return DeeTwenty.roll(deeCee, this.fortitude);
+        }
+
+        public string getStatistics()
+        {
+            return ("AC: " + armour + " Fort: " + fortitude + " Ref: " + reflex + " Will: " + will);
         }
 
         private int armour;

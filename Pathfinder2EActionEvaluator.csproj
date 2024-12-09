@@ -8,6 +8,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>True</UseWPF>
     <StartupObject>Pathfinder2EActionEvaluator.Program</StartupObject>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
 </Project>

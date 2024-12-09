@@ -61,6 +61,7 @@
             addCreatureButton.TabIndex = 1;
             addCreatureButton.Text = "Add Creature";
             addCreatureButton.UseVisualStyleBackColor = true;
+            addCreatureButton.Click += addCreatureButton_Click;
             // 
             // spellListBox
             // 
@@ -102,12 +103,13 @@
             // 
             // clearCreatureButton
             // 
-            clearCreatureButton.Location = new Point(254, 79);
+            clearCreatureButton.Location = new Point(285, 79);
             clearCreatureButton.Name = "clearCreatureButton";
-            clearCreatureButton.Size = new Size(77, 94);
+            clearCreatureButton.Size = new Size(46, 94);
             clearCreatureButton.TabIndex = 13;
-            clearCreatureButton.Text = "Clear All Creatures";
+            clearCreatureButton.Text = "Clear All Foes";
             clearCreatureButton.UseVisualStyleBackColor = true;
+            clearCreatureButton.Click += clearCreatureButton_Click;
             // 
             // CreatureDisplay
             // 
@@ -116,7 +118,7 @@
             CreatureDisplay.Name = "CreatureDisplay";
             CreatureDisplay.ReadOnly = true;
             CreatureDisplay.ScrollBars = ScrollBars.Vertical;
-            CreatureDisplay.Size = new Size(242, 94);
+            CreatureDisplay.Size = new Size(273, 94);
             CreatureDisplay.TabIndex = 5;
             // 
             // label5
@@ -239,6 +241,7 @@
             runSpellSimButton.TabIndex = 14;
             runSpellSimButton.Text = "Run Spell Simulation";
             runSpellSimButton.UseVisualStyleBackColor = true;
+            runSpellSimButton.Click += runSpellSimButton_Click;
             // 
             // spellSimOutput
             // 
