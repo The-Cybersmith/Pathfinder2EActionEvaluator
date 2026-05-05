@@ -43,7 +43,7 @@ namespace Pathfinder2EActionEvaluator
 
         public void clearEnemies()
         {
-            this.currentEnemies = new List<Creature>();
+            this.currentEnemies.Clear();
         }
 
         public List<string> getSpellNameList()
