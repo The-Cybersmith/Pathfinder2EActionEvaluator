@@ -18,10 +18,14 @@ namespace Pathfinder2EActionEvaluator
 
     class DeeTwenty
     {
+        //this uses a singleton-like solution so that the psuedorandom function will not just
+        //produce the same result even on very very fast computers, or in the event of multi-
+        //threading. (thanks to Grok for pointing this out, good call, buddy!)
+        private static readonly Random SingleUniversalDice = new Random();
+
         public static Result roll(int target, int modifier)
         {
-            Random rnd = new Random();
-            int die = rnd.Next(1, 21);
+            int die = SingleUniversalDice.Next(1, 21);
 
             bool nat20 = die == 20;
             bool nat1 = die == 1;
