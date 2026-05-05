@@ -103,7 +103,7 @@ namespace Pathfinder2EActionEvaluator
 
     abstract class Effect
     {
-        abstract public List<int> getAtionInvestments();
+        abstract public List<int> getActionInvestments();
 
         //if this returns empty array, assume any number of targets is valid, such as a burst effect.
         abstract public List<int> getMaxTargets();
@@ -151,7 +151,7 @@ namespace Pathfinder2EActionEvaluator
         }
 
         //This spell always costs two actions to cast
-        override public List<int> getAtionInvestments()
+        override public List<int> getActionInvestments()
         {
             List<int> l = new List<int>();
             l.Add(2);
