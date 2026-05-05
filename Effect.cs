@@ -163,6 +163,11 @@ namespace Pathfinder2EActionEvaluator
             int actions = 0;
             int reactions = 0;
 
+            //Only the outcome of a critical will fail matters for the purposes of action evalutaion.
+            //the persistent damage cannot be removed by most creatures using actions, and the fear
+            //effect does not cost actions either. Remember, the purpose of this program is to measure
+            //the action economy implications of spells (and maybe other effects one day) not the overall
+            //value in terms of damage inflicted.
             foreach (Creature c in enemies){
                 Result r = c.reflexSave(this.spellDeeCee);
                 Result w = c.willSave(this.spellDeeCee);
