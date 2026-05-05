@@ -77,7 +77,7 @@ namespace Pathfinder2EActionEvaluator
                     reactions += temps.t2;
                 }
                 actions = actions / (double) runs;
-                reactions = actions / (double)runs;
+                reactions = reactions / (double)runs;
             }
             return (actions, reactions);
         }
