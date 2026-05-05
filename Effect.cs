@@ -88,6 +88,10 @@ namespace Pathfinder2EActionEvaluator
         private int fortitude;
         private int will;
 
+        //Note: this constructor, and thus any interface element that uses it, should allow "extreme"
+        //values, including values that are negative, because with buffs and debuffs it is possible to
+        //lower or raise a creature's defences outside of normal parameters. At lower levels, an ooze
+        //for instance, that is unconscious might well have a negative AC.
         public Creature (int a, int r, int f, int w)
         {
             this.armour = a;
