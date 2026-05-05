@@ -37,8 +37,8 @@ namespace Pathfinder2EActionEvaluator
         {
             //for the moment, hardcode as arcane, future versions may actually deal with tradition
             this.evaluator.assignSpell(spellName, dc, at, Tradition.Arcane);
-            (double actions, double reactions) = this.evaluator.executeSimulation(runs);
-            string printString = "" + actions + " actions \n" + reactions + " reactions";
+            simulationResultClass result = this.evaluator.executeSimulation(runs);
+            string printString = "" + result.AverageActions + " actions \n" + result.AverageReactions + " reactions";
             displaySimResult(printString);
         }
 

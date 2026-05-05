@@ -68,7 +68,7 @@ namespace Pathfinder2EActionEvaluator
         }
 
         //run a set number of times, and take an average
-        public (double actions, double reactions) executeSimulation(int runs)
+        public simulationResultClass executeSimulation(int runs)
         {
             double actions = 0.0;
             double reactions = 0.0;
@@ -84,7 +84,8 @@ namespace Pathfinder2EActionEvaluator
                 actions = actions / (double) runs;
                 reactions = reactions / (double)runs;
             }
-            return (actions, reactions);
+            simulationResultClass output = new(SimulationName : "Placeholder", SimulationTime : DateTime.Now, AverageActions : actions, AverageReactions : reactions, NumberOfRuns : runs, NumberOfTargets : currentEnemies.Count);
+            return output;
         }
 
     }
