@@ -15,7 +15,7 @@ namespace Pathfinder2EActionEvaluator
         private void Form1_Load(object sender, EventArgs e)
         {
             this.spellListBox.Items.Clear();
-            this.evaluator = new actionEvaluatorClass();
+            this.evaluator = actionEvaluatorClass.Instance;//invoke the singleton!
             this.spellListBox.DataSource = new BindingSource(this.evaluator.getSpellNameList(), null);
             this.spellListBox.DisplayMember = "Key";
 

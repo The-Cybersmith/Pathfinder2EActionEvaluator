@@ -9,11 +9,16 @@ namespace Pathfinder2EActionEvaluator
     //To limit interface entangling, this is its own separate class.
     class actionEvaluatorClass
     {
+        //this allows the program to "lazily" delay instantiation until needed, speeding up loading.
+        private static readonly Lazy<actionEvaluatorClass> InstanceInWaiting = new Lazy<actionEvaluatorClass>(() => new actionEvaluatorClass());
+        //This ensures the class will operate as a singleton, there should never be two copies of it
+        public static actionEvaluatorClass Instance = InstanceInWaiting.Value;
+
         private Spell? currentEffect;
         private List<Creature> currentEnemies;
         private Dictionary<string, Type> spells;
 
-        public actionEvaluatorClass()
+        private actionEvaluatorClass()
         {
             var baseType = typeof(Spell);
             var assembly = baseType.Assembly;
